@@ -37,25 +37,25 @@ public class DemoRunner implements CommandLineRunner {
         String email = UUID.randomUUID().toString();
         Client clientToRegister = new Client(email, "password");
         Long clientId = clientService.registerClient(clientToRegister);
-        LOG.debug("register");
+        LOG.info("register");
         Client clientToLogin = new Client(email, "password");
         Client loggedInClient = clientService.login(clientToLogin);
-        LOG.debug("login");
+        LOG.info("login");
         Long sessionId = sessionService.createSession(loggedInClient);
-        LOG.debug("createSession");
+        LOG.info("createSession");
 
         paymentService.deposit(sessionId, 100.0);
-        LOG.debug("deposit 100.0");
+        LOG.info("deposit 100.0");
         paymentService.withdraw(sessionId, 10.1);
-        LOG.debug("withdraw 10.1");
+        LOG.info("withdraw 10.1");
         List<PaymentDto> statements = paymentService.accountStatement(sessionId);
-        LOG.debug("accountStatement ");
+        LOG.info("accountStatement ");
         for (PaymentDto statement: statements) {
-            LOG.debug("amount: " + statement.getAmount() + ", date: " + statement.getDate());
+            LOG.info("amount: " + statement.getAmount() + ", date: " + statement.getDate());
         }
         Double accountBalance = paymentService.accountBalance(sessionId);
-        LOG.debug("accountBalance: " + accountBalance);
+        LOG.info("accountBalance: " + accountBalance);
         sessionService.closeSession(sessionId);
-        LOG.debug("closeSession");
+        LOG.info("closeSession");
     }
 }
