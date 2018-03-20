@@ -7,7 +7,6 @@ import com.polhul.payment.service.SessionService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.json.JacksonTester;
@@ -19,7 +18,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.http.MediaType;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.refEq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
@@ -46,10 +44,10 @@ public class ClientControllerIntegrationTest {
     private SessionService sessionService;
 
     private Long notExistedClientToRegisterId = 12l;
-    private Long existedClientToSignUpId = 22l;
+    private Long existedClientToLoginId = 22l;
     private Client notExistedClientToRegisterWithoutId = new Client("wrongEemail@gmail.com", "wrongPassword");
     private Client notExistedClientToRegisterWithId = new Client("wrongEmail@gmail.com", "wrongPassword");
-    private Client existedClientToSignUp = new Client("correctEmail@gmail.com", "correctPassword");
+    private Client existedClientToLogin = new Client("correctEmail@gmail.com", "correctPassword");
     private long sessionId = 543l;
 
     private JacksonTester<Client> jsonClient;
@@ -59,14 +57,14 @@ public class ClientControllerIntegrationTest {
         JacksonTester.initFields(this, new ObjectMapper());
 
         notExistedClientToRegisterWithId.setId(notExistedClientToRegisterId);
-        existedClientToSignUp.setId(existedClientToSignUpId);
+        existedClientToLogin.setId(existedClientToLoginId);
 
         doNothing().when(clientService).checkClient(notExistedClientToRegisterWithoutId);
         when(clientService.registerClient(notExistedClientToRegisterWithoutId)).thenReturn(notExistedClientToRegisterId);
 
-        doNothing().when(clientService).checkClient(existedClientToSignUp);
-        when(clientService.signUp(existedClientToSignUp)).thenReturn(existedClientToSignUp);
-        when(sessionService.createSession(existedClientToSignUp)).thenReturn(existedClientToSignUpId);
+        doNothing().when(clientService).checkClient(existedClientToLogin);
+        when(clientService.login(existedClientToLogin)).thenReturn(existedClientToLogin);
+        when(sessionService.createSession(existedClientToLogin)).thenReturn(existedClientToLoginId);
 
         doNothing().when(clientService).checkClientToken(sessionId);
         doNothing().when(sessionService).closeSession(sessionId);
@@ -87,16 +85,16 @@ public class ClientControllerIntegrationTest {
     }
 
     @Test
-    public void requestForSignUpIsSuccessfullyProcessedWithAvailableClient() throws Exception {
+    public void requestForLoginIsSuccessfullyProcessedWithAvailableClient() throws Exception {
         MockHttpServletResponse response = this.mockMvc.perform(
-                post("/client/signup")
+                post("/client/login")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(jsonClient.write(existedClientToSignUp).getJson())
+                        .content(jsonClient.write(existedClientToLogin).getJson())
         ).andReturn().getResponse();
 
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        verify(clientService).checkClient(refEq(existedClientToSignUp));
-        verify(clientService).signUp(refEq(existedClientToSignUp));
+        verify(clientService).checkClient(refEq(existedClientToLogin));
+        verify(clientService).login(refEq(existedClientToLogin));
     }
 
     @Test

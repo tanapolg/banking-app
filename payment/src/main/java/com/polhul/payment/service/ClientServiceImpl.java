@@ -65,7 +65,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client signUp(Client client) {
+    public Client login(Client client) {
         if (!isClientExist(client)) {
             throw new AppException("client with this email doesn't exist", StatusCode.NO_CLIENT_EXIST);
         }

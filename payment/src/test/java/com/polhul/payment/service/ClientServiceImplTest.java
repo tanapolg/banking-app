@@ -30,26 +30,26 @@ public class ClientServiceImplTest {
     }
 
     @Test
-    public void ifNoClientExistOnSignUpExceptionIsReturned() {
-        Client notExistedClientToSignUp = new Client("wrong-email@gmail.com", "wrong-password");
+    public void ifNoClientExistOnLoginExceptionIsReturned() {
+        Client notExistedClientToLogin = new Client("wrong-email@gmail.com", "wrong-password");
         Client existedClient = new Client("correct-email@gmail.com", "correct-password");
         Assertions.assertThatThrownBy(() -> {
             when(clientDao.findOneClientByEmail(existedClient.getEmail())).thenReturn(existedClient);
-            Client signedUpClient = clientService.signUp(notExistedClientToSignUp);
+            Client signedUpClient = clientService.login(notExistedClientToLogin);
         })
                 .isInstanceOf(AppException.class)
                 .hasMessageContaining("client with this email doesn't exist");
     }
 
     @Test
-    public void ifClientExistOnSignUpClientIdIsReturned() {
+    public void ifClientExistOnLoginClientIdIsReturned() {
         Client existedClient = new Client("correct-email@gmail.com", "correct-password");
         existedClient.setId(123);
         Client existedClientWithEncodedPassword = new Client(existedClient.getEmail(), clientService.simpleEncodePassword(existedClient.getPassword()));
         existedClientWithEncodedPassword.setId(123);
 
         when(clientDao.findOneClientByEmail(existedClient.getEmail())).thenReturn(existedClientWithEncodedPassword);
-        Client signedUpClient = clientService.signUp(existedClient);
+        Client signedUpClient = clientService.login(existedClient);
 
         assertThat(signedUpClient.getId(), is(existedClient.getId()));
     }

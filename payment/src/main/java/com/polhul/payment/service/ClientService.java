@@ -15,7 +15,7 @@ public interface ClientService {
 
     String simpleEncodePassword(String password);
 
-    Client signUp(Client client);
+    Client login(Client client);
 
     void checkClientToken(Long clientToken);
 }

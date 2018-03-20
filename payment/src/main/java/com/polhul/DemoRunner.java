@@ -29,10 +29,10 @@ public class DemoRunner implements CommandLineRunner {
         Client clientToRegister = new Client(email, "password");
         Long clientId = clientService.registerClient(clientToRegister);
         System.out.println("register");
-        Client clientToSignUp = new Client(email, "password");
-        Client signedUpClient = clientService.signUp(clientToSignUp);
-        System.out.println("signUp");
-        Long sessionId = sessionService.createSession(signedUpClient);
+        Client clientToLogin = new Client(email, "password");
+        Client loggedInClient = clientService.login(clientToLogin);
+        System.out.println("login");
+        Long sessionId = sessionService.createSession(loggedInClient);
         System.out.println("createSession");
 
         paymentService.deposit(sessionId, 100.0);

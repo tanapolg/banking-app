@@ -24,11 +24,11 @@ public class ClientController {
         return clientService.registerClient(client);
     }
 
-    @PostMapping("/client/signup")
-    public Long signUp(@RequestBody Client client) {
+    @PostMapping("/client/login")
+    public Long login(@RequestBody Client client) {
         clientService.checkClient(client);
-        Client signedUpClient = clientService.signUp(client);
-        return sessionService.createSession(signedUpClient);
+        Client loginClient = clientService.login(client);
+        return sessionService.createSession(loginClient);
     }
 
     @PostMapping("/client/logout")
