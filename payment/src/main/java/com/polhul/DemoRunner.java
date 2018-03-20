@@ -6,8 +6,11 @@ import com.polhul.payment.service.ClientService;
 import com.polhul.payment.service.PaymentService;
 import com.polhul.payment.service.SessionService;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,37 +19,45 @@ import java.util.UUID;
  * Created by TPolhul on 3/16/2018.
  */
 @Component
-@AllArgsConstructor
+//@AllArgsConstructor
 public class DemoRunner implements CommandLineRunner {
+
+    private Logger LOG = LoggerFactory.getLogger(DemoRunner.class);
+
     private final PaymentService paymentService;
     private final ClientService clientService;
     private final SessionService sessionService;
 
+    public DemoRunner(PaymentService paymentService, ClientService clientService, SessionService sessionService) {
+        this.paymentService = paymentService;
+        this.clientService = clientService;
+        this.sessionService = sessionService;
+    }
+
     @Override
     public void run(String... strings) throws Exception {
-        //TODO: it
         String email = UUID.randomUUID().toString();
         Client clientToRegister = new Client(email, "password");
         Long clientId = clientService.registerClient(clientToRegister);
-        System.out.println("register");
+        LOG.debug("register");
         Client clientToLogin = new Client(email, "password");
         Client loggedInClient = clientService.login(clientToLogin);
-        System.out.println("login");
+        LOG.debug("login");
         Long sessionId = sessionService.createSession(loggedInClient);
-        System.out.println("createSession");
+        LOG.debug("createSession");
 
         paymentService.deposit(sessionId, 100.0);
-        System.out.println("deposit 100.0");
+        LOG.debug("deposit 100.0");
         paymentService.withdraw(sessionId, 10.1);
-        System.out.println("withdraw 10.1");
+        LOG.debug("withdraw 10.1");
         List<PaymentDto> statements = paymentService.accountStatement(sessionId);
-        System.out.println("accountStatement ");
+        LOG.debug("accountStatement ");
         for (PaymentDto statement: statements) {
-            System.out.println("amount: " + statement.getAmount() + ", date: " + statement.getDate());
+            LOG.debug("amount: " + statement.getAmount() + ", date: " + statement.getDate());
         }
         Double accountBalance = paymentService.accountBalance(sessionId);
-        System.out.println("accountBalance: " + accountBalance);
+        LOG.debug("accountBalance: " + accountBalance);
         sessionService.closeSession(sessionId);
-        System.out.println("closeSession");
+        LOG.debug("closeSession");
     }
 }

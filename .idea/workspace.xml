@@ -14,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BankingServer$All_in_payment.coverage" NAME="All in payment Coverage Results" MODIFIED="1521571202764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/BankingServer$com_polhul_payment_in_payment.coverage" NAME="com.polhul.payment in payment Coverage Results" MODIFIED="1521562688435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BankingServer$com_polhul_payment_in_payment.coverage" NAME="com.polhul.payment in payment Coverage Results" MODIFIED="1521576162570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.polhul.payment.*</FILTER>
     </SUITE>
   </component>
@@ -174,17 +174,7 @@
         <entry file="file://$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/web/ClientControllerIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="7">
-              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-test.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/payment/src/test/resources/application-test.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -193,19 +183,33 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/payment/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema-postgres.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logback-spring.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/payment/src/main/resources/logback-spring.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="62" lean-forward="false" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schema-postgres.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/payment/src/main/resources/schema-postgres.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="159">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <marker date="1521574381905" expanded="true" signature="29:132" ph="CREATE TABLE... client" />
+                <marker date="1521574381905" expanded="true" signature="165:302" ph="CREATE TABLE... payment" />
+                <marker date="1521574381905" expanded="true" signature="335:495" ph="CREATE TABLE... session" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -244,12 +248,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemoRunner.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DemoRunner.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="347">
+              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -287,7 +293,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/payment/src/main/java/web/PaymentController.java" />
         <option value="$PROJECT_DIR$/payment/src/main/java/web/ClientController.java" />
         <option value="$PROJECT_DIR$/payment/src/main/java/service/ClientService.java" />
         <option value="$PROJECT_DIR$/payment/src/main/java/service/PaymentServiceImpl.java" />
@@ -332,12 +337,13 @@
         <option value="$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/dao/ClientDaoTest.java" />
         <option value="$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/dao/PaymentDaoTest.java" />
         <option value="$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/dao/SessionDaoTest.java" />
-        <option value="$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java" />
         <option value="$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/service/ClientServiceImplTest.java" />
         <option value="$PROJECT_DIR$/payment/src/main/java/com/polhul/payment/web/ClientController.java" />
         <option value="$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/web/ClientControllerIntegrationTest.java" />
-        <option value="$PROJECT_DIR$/payment/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/payment/src/main/resources/schema-postgres.sql" />
+        <option value="$PROJECT_DIR$/payment/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java" />
+        <option value="$PROJECT_DIR$/payment/src/main/resources/logback-spring.xml" />
       </list>
     </option>
   </component>
@@ -480,6 +486,40 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="payment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="payment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -528,6 +568,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polhul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -544,6 +592,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.polhul" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BankingServer\payment\src\main\resources" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -597,32 +648,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="PaymentDaoTest.ifThereIsNoPaymentsWithSuchClientIdNullIsReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.polhul.payment.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="payment" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.polhul.payment.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.polhul.payment.dao.PaymentDaoTest" />
-      <option name="METHOD_NAME" value="ifThereIsNoPaymentsWithSuchClientIdNullIsReturned" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -663,6 +688,32 @@
       <option name="MAIN_CLASS_NAME" value="com.polhul.payment.dao.PaymentDaoTest" />
       <option name="METHOD_NAME" value="ifPaymentsForSumByClientIdAreFoundTheyAreReturned" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="com.polhul.payment in payment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.polhul.payment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="payment" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.polhul.payment" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1151,17 +1202,17 @@
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.BankingPaymentApplication" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.SessionDaoTest.ifSessionByClientIdAreFoundTheyAreReturned" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.All in payment" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifThereIsNoPaymentsWithSuchClientIdNullIsReturned" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundTheyAreReturned" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundTheyAreReturned" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.com.polhul.payment in payment" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.All in payment" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SessionDaoTest.ifSessionByClientIdAreFoundTheyAreReturned" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundTheyAreReturned" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifThereIsNoPaymentsWithSuchClientIdNullIsReturned" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.com.polhul.payment in payment" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SessionDaoTest.ifSessionByClientIdAreFoundTheyAreReturned" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundTheyAreReturned" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" />
       </list>
     </recent_temporary>
   </component>
@@ -1186,7 +1237,7 @@
       <workItem from="1521453313782" duration="10957000" />
       <workItem from="1521471595526" duration="25751000" />
       <workItem from="1521544272093" duration="8342000" />
-      <workItem from="1521562478215" duration="9175000" />
+      <workItem from="1521562478215" duration="11452000" />
     </task>
     <servers />
   </component>
@@ -1196,9 +1247,6 @@
     </history-entry>
     <history-entry file="All_in_payment - 2018.03.20 at 20h 40m 19s.xml">
       <configuration name="All in payment" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PaymentDaoTest_ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned - 2018.03.20 at 19h 28m 38s.xml">
-      <configuration name="PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PaymentDaoTest_ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned - 2018.03.20 at 19h 29m 04s.xml">
       <configuration name="PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned" configurationId="JUnit" />
@@ -1221,9 +1269,12 @@
     <history-entry file="SessionDaoTest_ifSessionByClientIdAreFoundTheyAreReturned - 2018.03.20 at 19h 33m 28s.xml">
       <configuration name="SessionDaoTest.ifSessionByClientIdAreFoundTheyAreReturned" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="com_polhul_payment_in_payment - 2018.03.20 at 22h 02m 53s.xml">
+      <configuration name="com.polhul.payment in payment" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69144000" />
+    <option name="totallyTimeSpent" value="71421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="234" y="3" width="1628" height="1044" extended-state="0" />
@@ -1248,10 +1299,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4302964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19532554" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23469388" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47420418" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2117347" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41053787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20089285" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1274,7 +1325,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java</url>
-          <line>29</line>
+          <line>40</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1315,7 +1366,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java</url>
-          <line>48</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -1375,7 +1426,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java</url>
-          <line>32</line>
+          <line>43</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
@@ -1417,7 +1468,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java</url>
-          <line>34</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
@@ -1530,13 +1581,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.8.RELEASE/spring-data-jpa-1.11.8.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="16" column="78" lean-forward="false" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.5.8.RELEASE/spring-boot-1.5.8.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1798,14 +1842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/payment/dao/SessionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="19" column="117" lean-forward="false" selection-start-line="19" selection-start-column="117" selection-end-line="19" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/dao/SessionDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -1872,14 +1908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/payment/service/ClientServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1906,19 +1934,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/payment/web/ClientController.java">
+    <entry file="file://$PROJECT_DIR$/payment/src/main/resources/schema-postgres.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="30" column="55" lean-forward="false" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/web/ClientControllerIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="159">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1521574381905" expanded="true" signature="29:132" ph="CREATE TABLE... client" />
+            <marker date="1521574381905" expanded="true" signature="165:302" ph="CREATE TABLE... payment" />
+            <marker date="1521574381905" expanded="true" signature="335:495" ph="CREATE TABLE... session" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1930,19 +1954,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/payment/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/web/ClientControllerIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+        <state relative-caret-position="7">
+          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/payment/src/main/resources/schema-postgres.sql">
+    <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/payment/web/ClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="416">
+          <caret line="30" column="55" lean-forward="false" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/payment/dao/SessionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="19" column="117" lean-forward="false" selection-start-line="19" selection-start-column="117" selection-end-line="19" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/payment/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/payment/src/main/resources/logback-spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="62" lean-forward="false" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/payment/src/main/java/com/polhul/DemoRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
