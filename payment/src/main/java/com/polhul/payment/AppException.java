@@ -6,7 +6,6 @@ import lombok.Getter;
  * Created by TPolhul on 3/16/2018.
  */
 @Getter
-//@AllArgsConstructor
 public class AppException extends RuntimeException {
     private final StatusCode code;
 

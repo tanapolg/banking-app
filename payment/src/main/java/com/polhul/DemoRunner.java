@@ -5,7 +5,6 @@ import com.polhul.payment.dto.PaymentDto;
 import com.polhul.payment.service.ClientService;
 import com.polhul.payment.service.PaymentService;
 import com.polhul.payment.service.SessionService;
-import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,7 +18,6 @@ import java.util.UUID;
  * Created by TPolhul on 3/16/2018.
  */
 @Component
-//@AllArgsConstructor
 public class DemoRunner implements CommandLineRunner {
 
     private Logger LOG = LoggerFactory.getLogger(DemoRunner.class);
