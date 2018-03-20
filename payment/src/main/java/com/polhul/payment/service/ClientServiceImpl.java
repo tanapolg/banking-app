@@ -2,7 +2,7 @@ package com.polhul.payment.service;
 
 import com.polhul.payment.AppException;
 import com.polhul.payment.StatusCode;
-import com.polhul.payment.dao.ClientDao;
+import com.polhul.payment.repository.ClientRepository;
 import com.polhul.payment.domain.Client;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +17,10 @@ import org.apache.commons.codec.binary.Base64;
 @Transactional
 public class ClientServiceImpl implements ClientService {
 
-    private final ClientDao clientDao;
+    private final ClientRepository clientRepository;
 
-    public ClientServiceImpl(ClientDao clientDao) {
-        this.clientDao = clientDao;
+    public ClientServiceImpl(ClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
     }
 
     @Override
@@ -50,12 +50,12 @@ public class ClientServiceImpl implements ClientService {
         }
         String password = simpleEncodePassword(client.getPassword());
         client.setPassword(password);
-        Client registeredClient = clientDao.save(client);
+        Client registeredClient = clientRepository.save(client);
         return registeredClient.getId();
     }
 
     private boolean isClientExist(Client client) {
-        Client foundClient = clientDao.findOneClientByEmail(client.getEmail());
+        Client foundClient = clientRepository.findOneClientByEmail(client.getEmail());
         return foundClient != null;
     }
 
@@ -69,7 +69,7 @@ public class ClientServiceImpl implements ClientService {
         if (!isClientExist(client)) {
             throw new AppException("client with this email doesn't exist", StatusCode.NO_CLIENT_EXIST);
         }
-        Client foundClient = clientDao.findOneClientByEmail(client.getEmail());
+        Client foundClient = clientRepository.findOneClientByEmail(client.getEmail());
         String encryptedPassword = simpleEncodePassword(client.getPassword());
         if (!encryptedPassword.equals(foundClient.getPassword())) {
             throw new AppException("client with this email and password doesn't exist", StatusCode.NO_CLIENT_EXIST);

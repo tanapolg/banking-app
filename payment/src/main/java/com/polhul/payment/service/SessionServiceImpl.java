@@ -1,6 +1,6 @@
 package com.polhul.payment.service;
 
-import com.polhul.payment.dao.SessionDao;
+import com.polhul.payment.repository.SessionRepository;
 import com.polhul.payment.domain.Client;
 import com.polhul.payment.domain.Session;
 import com.polhul.payment.domain.SessionStatus;
@@ -14,28 +14,28 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class SessionServiceImpl implements SessionService {
-    private final SessionDao sessionDao;
+    private final SessionRepository sessionRepository;
 
-    public SessionServiceImpl(SessionDao sessionDao) {
-        this.sessionDao = sessionDao;
+    public SessionServiceImpl(SessionRepository sessionRepository) {
+        this.sessionRepository = sessionRepository;
     }
 
     @Override
     public Long createSession(Client client) {
-        int updatedClientSessions = sessionDao.updateStatus(client.getId(), SessionStatus.EXPIRED.getMessage(), SessionStatus.ACTIVE.getMessage());
+        int updatedClientSessions = sessionRepository.updateStatus(client.getId(), SessionStatus.EXPIRED.getMessage(), SessionStatus.ACTIVE.getMessage());
         Session session = new Session(System.currentTimeMillis(), client, SessionStatus.ACTIVE);
-        Session createdSession = sessionDao.save(session);
+        Session createdSession = sessionRepository.save(session);
         return createdSession.getId();
     }
 
     @Override
     public Client getClientBySessionId(Long sessionId) {
-        Session currentSession = sessionDao.findOneById(sessionId);
+        Session currentSession = sessionRepository.findOneById(sessionId);
         return currentSession.getClient();
     }
 
     @Override
     public void closeSession(Long sessionId) {
-        int updatedClientSessions = sessionDao.updateEndTimeAndStatus(sessionId, System.currentTimeMillis(), SessionStatus.EXPIRED.getMessage());
+        int updatedClientSessions = sessionRepository.updateEndTimeAndStatus(sessionId, System.currentTimeMillis(), SessionStatus.EXPIRED.getMessage());
     }
 }

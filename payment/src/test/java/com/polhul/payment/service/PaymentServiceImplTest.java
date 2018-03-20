@@ -1,6 +1,6 @@
 package com.polhul.payment.service;
 
-import com.polhul.payment.dao.PaymentDao;
+import com.polhul.payment.repository.PaymentRepository;
 import com.polhul.payment.domain.Client;
 import com.polhul.payment.domain.Payment;
 import com.polhul.payment.dto.PaymentDto;
@@ -25,7 +25,7 @@ import static org.mockito.Mockito.when;
 public class PaymentServiceImplTest {
 
     @Mock
-    private PaymentDao paymentDao;
+    private PaymentRepository paymentRepository;
     @Mock
     private SessionService sessionService;
 
@@ -33,7 +33,7 @@ public class PaymentServiceImplTest {
 
     @Before
     public void init() {
-        paymentService = new PaymentServiceImpl(paymentDao, sessionService);
+        paymentService = new PaymentServiceImpl(paymentRepository, sessionService);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class PaymentServiceImplTest {
         }};
 
         when(sessionService.getClientBySessionId(sessionId)).thenReturn(existedClient);
-        when(paymentDao.findByClientIdOrderByDateDesc(clientId)).thenReturn(payments);
+        when(paymentRepository.findByClientIdOrderByDateDesc(clientId)).thenReturn(payments);
         List<PaymentDto> result = paymentService.accountStatement(sessionId);
 
         Assert.assertNotNull(result);

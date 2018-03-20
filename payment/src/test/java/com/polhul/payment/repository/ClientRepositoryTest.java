@@ -1,4 +1,4 @@
-package com.polhul.payment.dao;
+package com.polhul.payment.repository;
 
 import com.polhul.payment.domain.Client;
 import org.junit.Test;
@@ -17,10 +17,10 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class ClientDaoTest {
+public class ClientRepositoryTest {
 
     @Autowired
-    private ClientDao dao;
+    private ClientRepository dao;
 
     @Test
     public void ifThereIsNoClientWithSuchEmailNullIsReturned() {

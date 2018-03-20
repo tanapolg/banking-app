@@ -1,4 +1,4 @@
-package com.polhul.payment.dao;
+package com.polhul.payment.repository;
 
 import com.polhul.payment.domain.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
  * Created by TPolhul on 3/16/2018.
  */
 @Repository
-public interface SessionDao extends JpaRepository<Session, String> {
+public interface SessionRepository extends JpaRepository<Session, String> {
 
     Session findOneById(Long clientToken);
 

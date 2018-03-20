@@ -1,6 +1,6 @@
 package com.polhul.payment.service;
 
-import com.polhul.payment.dao.SessionDao;
+import com.polhul.payment.repository.SessionRepository;
 import com.polhul.payment.domain.Client;
 import com.polhul.payment.domain.Session;
 import com.polhul.payment.domain.SessionStatus;
@@ -20,14 +20,14 @@ import static org.mockito.Mockito.when;
 public class SessionServiceImplTest {
 
     @Mock
-    private SessionDao sessionDao;
+    private SessionRepository sessionRepository;
 
     private SessionService sessionService;
 
 
     @Before
     public void init() {
-        sessionService = new SessionServiceImpl(sessionDao);
+        sessionService = new SessionServiceImpl(sessionRepository);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class SessionServiceImplTest {
         long sessionId = 234;
         Session createdSessionWithId = new Session(sessionStartTime, existedClient, SessionStatus.ACTIVE);
         createdSessionWithId.setId(sessionId);
-        when(sessionDao.findOneById(sessionId)).thenReturn(createdSessionWithId);
+        when(sessionRepository.findOneById(sessionId)).thenReturn(createdSessionWithId);
         Client client = sessionService.getClientBySessionId(sessionId);
 
         Assert.assertNotNull(client);

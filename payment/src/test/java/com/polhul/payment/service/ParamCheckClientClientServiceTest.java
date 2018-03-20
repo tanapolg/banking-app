@@ -2,7 +2,7 @@ package com.polhul.payment.service;
 
 import com.polhul.payment.AppException;
 import com.polhul.payment.StatusCode;
-import com.polhul.payment.dao.ClientDao;
+import com.polhul.payment.repository.ClientRepository;
 import com.polhul.payment.domain.Client;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
@@ -31,13 +31,13 @@ public class ParamCheckClientClientServiceTest {
         this.errorMessage = errorMessage;
     }
 
-    private ClientDao dao;
+    private ClientRepository dao;
     private ClientService service;
     private MockMvc mockMvc;
 
     @Before
     public void init() {
-        dao = Mockito.mock(ClientDao.class);
+        dao = Mockito.mock(ClientRepository.class);
         service = new ClientServiceImpl(dao);
         mockMvc = MockMvcBuilders.standaloneSetup(service).build();
     }

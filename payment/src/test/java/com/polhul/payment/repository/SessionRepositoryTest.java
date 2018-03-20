@@ -1,4 +1,4 @@
-package com.polhul.payment.dao;
+package com.polhul.payment.repository;
 
 import com.polhul.payment.domain.Client;
 import com.polhul.payment.domain.Session;
@@ -19,12 +19,12 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class SessionDaoTest {
+public class SessionRepositoryTest {
 
     @Autowired
-    private SessionDao dao;
+    private SessionRepository dao;
     @Autowired
-    private ClientDao clientDao;
+    private ClientRepository clientDao;
 
     private long now = System.currentTimeMillis();
 

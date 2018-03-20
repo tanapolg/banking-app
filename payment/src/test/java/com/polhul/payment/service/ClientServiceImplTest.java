@@ -1,7 +1,7 @@
 package com.polhul.payment.service;
 
 import com.polhul.payment.AppException;
-import com.polhul.payment.dao.ClientDao;
+import com.polhul.payment.repository.ClientRepository;
 import com.polhul.payment.domain.Client;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
@@ -20,13 +20,13 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class ClientServiceImplTest {
     @Mock
-    private ClientDao clientDao;
+    private ClientRepository clientRepository;
 
     private ClientService clientService;
 
     @Before
     public void init() {
-        clientService = new ClientServiceImpl(clientDao);
+        clientService = new ClientServiceImpl(clientRepository);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class ClientServiceImplTest {
         Client notExistedClientToLogin = new Client("wrong-email@gmail.com", "wrong-password");
         Client existedClient = new Client("correct-email@gmail.com", "correct-password");
         Assertions.assertThatThrownBy(() -> {
-            when(clientDao.findOneClientByEmail(existedClient.getEmail())).thenReturn(existedClient);
+            when(clientRepository.findOneClientByEmail(existedClient.getEmail())).thenReturn(existedClient);
             Client signedUpClient = clientService.login(notExistedClientToLogin);
         })
                 .isInstanceOf(AppException.class)
@@ -48,7 +48,7 @@ public class ClientServiceImplTest {
         Client existedClientWithEncodedPassword = new Client(existedClient.getEmail(), clientService.simpleEncodePassword(existedClient.getPassword()));
         existedClientWithEncodedPassword.setId(123);
 
-        when(clientDao.findOneClientByEmail(existedClient.getEmail())).thenReturn(existedClientWithEncodedPassword);
+        when(clientRepository.findOneClientByEmail(existedClient.getEmail())).thenReturn(existedClientWithEncodedPassword);
         Client signedUpClient = clientService.login(existedClient);
 
         assertThat(signedUpClient.getId(), is(existedClient.getId()));
@@ -58,8 +58,8 @@ public class ClientServiceImplTest {
     public void ifRegisterNewClientClientIdIsReturned() {
         Client newClientToRegister = new Client("register-correct-email@gmail.com", "correct-password");
         newClientToRegister.setId(123);
-        when(clientDao.findOneClientByEmail(newClientToRegister.getEmail())).thenReturn(null);
-        when(clientDao.save(newClientToRegister)).thenReturn(newClientToRegister);
+        when(clientRepository.findOneClientByEmail(newClientToRegister.getEmail())).thenReturn(null);
+        when(clientRepository.save(newClientToRegister)).thenReturn(newClientToRegister);
         Long registerClientId = clientService.registerClient(newClientToRegister);
         assertThat(registerClientId, is(newClientToRegister.getId()));
     }
@@ -69,8 +69,8 @@ public class ClientServiceImplTest {
         Assertions.assertThatThrownBy(() -> {
             Client existedClientToRegister = new Client("register-correct-email@gmail.com", "correct-password");
             existedClientToRegister.setId(123);
-            when(clientDao.findOneClientByEmail(existedClientToRegister.getEmail())).thenReturn(existedClientToRegister);
-            when(clientDao.save(existedClientToRegister)).thenReturn(existedClientToRegister);
+            when(clientRepository.findOneClientByEmail(existedClientToRegister.getEmail())).thenReturn(existedClientToRegister);
+            when(clientRepository.save(existedClientToRegister)).thenReturn(existedClientToRegister);
             Long registerClientId = clientService.registerClient(existedClientToRegister);
             assertThat(registerClientId, is(existedClientToRegister.getId()));
         })

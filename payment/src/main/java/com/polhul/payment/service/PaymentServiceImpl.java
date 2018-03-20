@@ -2,7 +2,7 @@ package com.polhul.payment.service;
 
 import com.polhul.payment.AppException;
 import com.polhul.payment.StatusCode;
-import com.polhul.payment.dao.PaymentDao;
+import com.polhul.payment.repository.PaymentRepository;
 import com.polhul.payment.domain.Client;
 import com.polhul.payment.domain.Payment;
 import com.polhul.payment.dto.PaymentDto;
@@ -20,25 +20,25 @@ import java.util.stream.Collectors;
 @Transactional
 public class PaymentServiceImpl implements PaymentService {
 
-    private final PaymentDao paymentDao;
+    private final PaymentRepository paymentRepository;
     private final SessionService sessionService;
 
-    public PaymentServiceImpl(PaymentDao paymentDao, SessionService sessionService) {
-        this.paymentDao = paymentDao;
+    public PaymentServiceImpl(PaymentRepository paymentRepository, SessionService sessionService) {
+        this.paymentRepository = paymentRepository;
         this.sessionService = sessionService;
     }
 
     @Override
     public double accountBalance(Long sessionId) {
         Client client = sessionService.getClientBySessionId(sessionId);
-        Double currentAccountAmount = paymentDao.getSumBalance(client.getId());
+        Double currentAccountAmount = paymentRepository.getSumBalance(client.getId());
         return (currentAccountAmount != null) ? currentAccountAmount : 0.0;
     }
 
     @Override
     public List<PaymentDto> accountStatement(Long sessionId) {
         Client client = sessionService.getClientBySessionId(sessionId);
-        List<Payment> accountStatement = paymentDao.findByClientIdOrderByDateDesc(client.getId());
+        List<Payment> accountStatement = paymentRepository.findByClientIdOrderByDateDesc(client.getId());
         return accountStatement.stream().map(payment -> convertToDto(payment)).collect(Collectors.toList());
     }
 
@@ -50,17 +50,17 @@ public class PaymentServiceImpl implements PaymentService {
     public Long deposit(Long sessionId, Double amount) {
         Client client = sessionService.getClientBySessionId(sessionId);
         Payment deposit = new Payment(client, amount, System.currentTimeMillis());
-        return paymentDao.save(deposit).getId();
+        return paymentRepository.save(deposit).getId();
     }
 
     @Override
     public Long withdraw(Long sessionId, Double amount) {
         Client client = sessionService.getClientBySessionId(sessionId);
-        Double currentAccountAmount = paymentDao.getSumBalance(client.getId());
+        Double currentAccountAmount = paymentRepository.getSumBalance(client.getId());
         currentAccountAmount = (currentAccountAmount != null) ? currentAccountAmount : 0.0;
         if (currentAccountAmount >= amount) {
             Payment deposit = new Payment(client, -1 * amount, System.currentTimeMillis());
-            return paymentDao.save(deposit).getId();
+            return paymentRepository.save(deposit).getId();
         } else {
             throw new AppException("not enough money on account", StatusCode.WITHDRAW_NOT_ACCEPTED);
         }
