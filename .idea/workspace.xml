@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/BankingServer$All_in_payment.coverage" NAME="All in payment Coverage Results" MODIFIED="1521567247171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/BankingServer$All_in_payment.coverage" NAME="All in payment Coverage Results" MODIFIED="1521571202764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/BankingServer$com_polhul_payment_in_payment.coverage" NAME="com.polhul.payment in payment Coverage Results" MODIFIED="1521562688435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.polhul.payment.*</FILTER>
     </SUITE>
@@ -173,8 +173,8 @@
       <file leaf-file-name="ClientControllerIntegrationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/web/ClientControllerIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="92" column="36" lean-forward="true" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+            <state relative-caret-position="7">
+              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -1248,12 +1248,15 @@
       <workItem from="1521453313782" duration="10957000" />
       <workItem from="1521471595526" duration="25751000" />
       <workItem from="1521544272093" duration="8342000" />
-      <workItem from="1521562478215" duration="7100000" />
+      <workItem from="1521562478215" duration="7220000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
     <history-entry file="All_in_payment - 2018.03.20 at 19h 34m 22s.xml">
+      <configuration name="All in payment" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_payment - 2018.03.20 at 20h 40m 19s.xml">
       <configuration name="All in payment" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PaymentDaoTest_ifPaymentsForSumByClientIdAreFoundBalanceSumIsReturned - 2018.03.20 at 19h 28m 38s.xml">
@@ -1271,9 +1274,6 @@
     <history-entry file="PaymentDaoTest_ifPaymentsForSumByClientIdAreFoundTheyAreReturned - 2018.03.20 at 19h 31m 58s.xml">
       <configuration name="PaymentDaoTest.ifPaymentsForSumByClientIdAreFoundTheyAreReturned" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SessionDaoTest_ifSessionByClientIdAreFoundTheyAreReturned - 2018.03.20 at 19h 26m 29s.xml">
-      <configuration name="SessionDaoTest.ifSessionByClientIdAreFoundTheyAreReturned" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SessionDaoTest_ifSessionByClientIdAreFoundTheyAreReturned - 2018.03.20 at 19h 32m 35s.xml">
       <configuration name="SessionDaoTest.ifSessionByClientIdAreFoundTheyAreReturned" configurationId="JUnit" />
     </history-entry>
@@ -1285,11 +1285,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67069000" />
+    <option name="totallyTimeSpent" value="67189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="3" width="1857" height="1044" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1313,7 +1313,7 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19532554" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47420418" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26377296" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26377296" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2000,8 +2000,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/payment/src/test/java/com/polhul/payment/web/ClientControllerIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="92" column="36" lean-forward="true" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+        <state relative-caret-position="7">
+          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding />
         </state>
       </provider>
