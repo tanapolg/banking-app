@@ -1,0 +1,11 @@
+com\polhul\payment\service\ParamCheckClientClientServiceTest.class
+com\polhul\payment\web\PaymentControllerIntegrationTest$1.class
+com\polhul\payment\service\PaymentServiceImplTest.class
+com\polhul\payment\web\ClientControllerIntegrationTest.class
+com\polhul\payment\service\PaymentServiceImplTest$1.class
+com\polhul\payment\service\SessionServiceImplTest.class
+com\polhul\payment\dao\PaymentDaoTest.class
+com\polhul\payment\dao\SessionDaoTest.class
+com\polhul\payment\web\PaymentControllerIntegrationTest.class
+com\polhul\payment\dao\ClientDaoTest.class
+com\polhul\payment\service\ClientServiceImplTest.class
